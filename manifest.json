@@ -1,0 +1,12 @@
+{
+ "name": "ТСД",
+ "short_name": "ТСД",
+ "start_url": "https://mstsd.github.io/tsd",
+ "description": "",
+ "display": "standalone",
+ "orientation": "any",
+ "theme_color": "#ffff00",
+ "background_color": "#ffffff",
+ "icons": [],
+ "scope": "https://mstsd.github.io/tsd"
+}
