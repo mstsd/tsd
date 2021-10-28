@@ -8,7 +8,7 @@
 	padding: 10px;
 	margin: 0 auto;
 	background-color: #DEB887 ;
-	max-width: 250px;}
+	max-width: 350px;}
 
 
 
@@ -53,6 +53,9 @@
 
 <script>
 let arr = [];
+function uname_db(val) {
+    localStorage.setItem('login', val);    
+}
 
 
 
@@ -62,7 +65,7 @@ function setBarcode(val){
 if (arr.length == 0){arr = JSON.parse(localStorage.getItem("arr"));}
 	arr.push(val.value);
 
-alert(arr);
+
 val.value = ''
 
 localStorage.setItem('arr', JSON.stringify(arr));
