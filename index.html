@@ -57,7 +57,19 @@ let arr = [];
 ////////////////
 function setBarcode(val){
 
+if (localStorage.getItem('arr') == null) {
+	localStorage.setItem('arr', val.value);
+	val.value = ''
+	return}
 
+
+
+if (arr.length == 0){		
+	arr = JSON.parse(localStorage.getItem("arr"));		
+	}
+	
+arr.push(val.value);
+localStorage.setItem('arr', JSON.stringify(arr));
 val.value = ''
 }
 
