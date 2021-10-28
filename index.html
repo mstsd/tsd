@@ -53,17 +53,18 @@
 
 <script>
 let arr = [];
-function uname_db(val) {
-    localStorage.setItem('login', val);    
-}
 
 
 
 
 ////////////////
 function setBarcode(val){
+
+localStorage.setItem('arr', val); 
+
 if (arr.length == 0){arr = JSON.parse(localStorage.getItem("arr"));}
 	arr.push(val.value);
+	
 
 
 val.value = ''
