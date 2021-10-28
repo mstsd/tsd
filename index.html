@@ -43,7 +43,7 @@
 	
 	
 	<div class="regcontainer">		
-		<input class="input" type="text" placeholder="Штрихкод ..." name="barcode" required onchange="setBarcode(this)">	
+		<input class="input" type="text" placeholder="Штрихкод ..." name="barcode" >	
 		<br><br><br>
 
 		<input class="input" type="button" onclick="countArr()" value="Выгрузить штрихкоды!!!">	
@@ -56,25 +56,27 @@ let arr = [];
 
 
 
-window.addEventListener("load", function() {
-if (localStorage.getItem('arr') !== null) {}else{
-
-localStorage.setItem('arr', 'Старт');}
-
-
-
-
-
 
 
 (function() {
   document.querySelector('input').addEventListener('keydown', function(e) {
     if (e.keyCode === 13) {
-	alert(111);
-     setBarcode(val);
+      // можете делать все что угодно со значением текстового поля
+     console.log(this.value);
+	  setBarcode(this);
     }
   });
 })();
+
+
+
+
+
+
+window.addEventListener("load", function() {
+if (localStorage.getItem('arr') !== null) {}else{
+
+localStorage.setItem('arr', 'Старт');}
 
 })
 
@@ -101,17 +103,6 @@ val.value = '';
  
  
  
- 
- 
-1
-2
-3
-4
-5
-6
-7
-8
-
 
 </script>
 
