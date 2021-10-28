@@ -1,24 +1,80 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<link rel="manifest" href="css/manifest.json"> <script src="css/app.js"></script>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	
-	<body>	
-	
-	<div class="regcontainer">
-		<div for="uname"><b>Имя</b></div>
-		<input class="input" type="text" placeholder="Введите имя ..." name="uname" >
 
-		<div for="psw"><b>Пароль</b></div>
-		<input class="input" type="password" placeholder="Введите пароль ..." name="psw" >
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.regcontainer { 
+	padding: 10px;
+	margin: 0 auto;
+	background-color: #DEB887 ;}
+
+
+
+.input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font: 15px/1 'Open Sans', sans-serif;
+    color: #2b2727;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+	//max-width: 360px;
+	width:100%;
+    background-color: #e2dfdf;
+    border: none;
+    padding: 8px 9px 9px 9px;
+    border-radius: 2px;
+    box-shadow: none;
+    outline: none;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #b3b5b9;
+}
+</style>
+
+
+
+</head>
+<body>
+<div id = "name"></div>
+	
+	
+	<div class="regcontainer">		
+		<input class="input" type="text" placeholder="Штрихкод ..." name="barcode" required onchange="setBarcode(this)">	
+		<br><br><br>
+
+		<input class="input" type="button" onclick="countArr()" value="Выгрузить штрихкоды!!!">	
 	</div>	
 	
 	
-	
-		<script src="js/main.js"></script>
-	</body>
-</html>
+
+<script>
+let arr = [];
+
+
+
+
+////////////////
+function setBarcode(val){
+if (arr.length == 0){arr = JSON.parse(localStorage.getItem("arr"));}
+	arr.push(val.value);
+
+alert(arr);
+val.value = ''
+
+localStorage.setItem('arr', JSON.stringify(arr));
+}
+
+
+
+ function countArr() {
+ alert(arr);}
+
+</script>
+
+</body></html>
+
+
 
